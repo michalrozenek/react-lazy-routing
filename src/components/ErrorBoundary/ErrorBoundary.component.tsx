@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface ErrorBoundaryProps {
+  message: string;
 }
 
 interface ErrorBoundaryState {
@@ -23,7 +24,7 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoun
 
   render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+    return <h1>{this.props.message}</h1>;
     }
 
     return this.props.children; 

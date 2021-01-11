@@ -9,7 +9,7 @@ const Contact = lazy(() => import('../../views/Contact/Contact.component'));
 const Home = lazy(() => import('../../views/Home/Home.component')); 
 
 export const AppRouter: React.FC = ({ children }) => (
-  <ErrorBoundary>
+  <ErrorBoundary message={'Router error'}>
     <Suspense fallback={<div>loading...</div>}>
       <Router>
         {children}
